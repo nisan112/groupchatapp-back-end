@@ -1,7 +1,12 @@
 package com.websocket.chyatt.Models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
 public class Message {
+    @Id
+    private String datetime;
     private String content;
     private String sender;
     private char type;
@@ -42,5 +47,23 @@ public class Message {
 
     public void setType(char type) {
         this.type = type;
+    }
+
+    public String getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(String datetime) {
+        this.datetime = datetime;
+    }
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "datetime='" + datetime + '\'' +
+                ", content='" + content + '\'' +
+                ", sender='" + sender + '\'' +
+                ", type=" + type +
+                '}';
     }
 }
